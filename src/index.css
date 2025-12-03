@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
+  }
+
+  /* floating animation */
+  @keyframes floatY {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .float-anim {
+    animation: floatY 3s ease-in-out infinite;
+  }
+
+  .float-anim.delay-200 { animation-delay: .2s; }
+  .float-anim.delay-400 { animation-delay: .4s; }
+
+  .profile-photo {
+    border: 2px solid rgba(74, 222, 128, 0.08);
+    box-shadow: 0 6px 22px rgba(16, 24, 39, 0.8);
+  }
+
+  /* premium look - subtle glass card */
+  .glass-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: .75rem;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+}
